@@ -7,10 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="background"></div>
   <header>
-    <div class="container">
-      <h1 class="gradient-text">Nihal Krishna</h1>
-      <p>Software Developer | Web Developer | Full Stack Developer</p>
+    <div class="hero">
+      <h1 class="animated-text">
+        <span>N</span><span>i</span><span>h</span><span>a</span><span>l</span> 
+        <span>K</span><span>r</span><span>i</span><span>s</span><span>h</span><span>n</span><span>a</span>
+      </h1>
+      <p class="role">Software Developer | Web Developer | Full Stack Developer</p>
     </div>
   </header>
   <nav>
@@ -24,7 +28,8 @@
   <section id="about" class="container">
     <h2>About Me</h2>
     <p>
-      Hi, I'm Nihal Krishna, a passionate software developer specializing in creating scalable web applications and full-stack development. I enjoy solving problems and building innovative solutions.
+      I'm Nihal Krishna, a creative problem solver passionate about building efficient, scalable, and innovative solutions. 
+      My expertise lies in full-stack development and crafting user-friendly web applications.
     </p>
   </section>
   <section id="skills" class="container">
@@ -34,23 +39,23 @@
       <li>React, Angular, Vue.js</li>
       <li>Node.js, Express.js</li>
       <li>Python, Django, Flask</li>
-      <li>Database Management: MySQL, MongoDB</li>
-      <li>Version Control: Git, GitHub</li>
+      <li>MySQL, MongoDB</li>
+      <li>Git, GitHub</li>
     </ul>
   </section>
   <section id="projects" class="container">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Project 1:</strong> Portfolio Website</li>
-      <li><strong>Project 2:</strong> E-commerce Platform</li>
-      <li><strong>Project 3:</strong> Task Management App</li>
+      <li><strong>Portfolio Website:</strong> Fully responsive design.</li>
+      <li><strong>E-commerce Platform:</strong> End-to-end development.</li>
+      <li><strong>Task Management App:</strong> Feature-rich user interface.</li>
     </ul>
   </section>
   <section id="contact" class="container">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:nihal@example.com">nihal@example.com</a></p>
-    <p>Phone: +91-1234567890</p>
     <p>LinkedIn: <a href="https://linkedin.com/in/nihal" target="_blank">linkedin.com/in/nihal</a></p>
+    <p>GitHub: <a href="https://github.com/nihal" target="_blank">github.com/nihal</a></p>
   </section>
   <footer>
     <p>&copy; 2025 Nihal Krishna. All rights reserved.</p>
@@ -59,12 +64,14 @@
 </html>
 
 <style>
+
+/* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #000;
+  font-family: 'Poppins', sans-serif;
   color: #fff;
-  line-height: 1.6;
+  background: #000;
+  overflow-x: hidden;
 }
 
 .container {
@@ -73,61 +80,136 @@ body {
   margin: 0 auto;
 }
 
+a {
+  color: #00ff88;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Dynamic Background */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #001f3f, #00ff88, #001f3f);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Header */
 header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 50px 0;
 }
 
-.gradient-text {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #00ff00, #00cc66);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero h1 {
+  font-size: 4rem;
+  display: inline-block;
 }
 
+.animated-text span {
+  display: inline-block;
+  font-size: 4rem;
+  animation: bounce 1s infinite;
+  color: transparent;
+  -webkit-text-stroke: 1px #00ff88;
+}
+
+.animated-text span:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.animated-text span:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.role {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #00ff88;
+}
+
+/* Navigation */
 nav {
   background: #111;
   padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav ul {
   list-style: none;
   text-align: center;
+  margin: 0;
   padding: 0;
 }
 
 nav ul li {
-  display: inline;
+  display: inline-block;
   margin: 0 15px;
 }
 
 nav ul li a {
+  font-weight: bold;
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  padding: 5px 10px;
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  color: #00ff00;
+  color: #00ff88;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
+/* Section */
 section {
   margin: 50px 0;
 }
 
-h2 {
-  color: #00ff00;
+section h2 {
+  color: #00ff88;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
+section ul li {
   margin: 10px 0;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px 0;
